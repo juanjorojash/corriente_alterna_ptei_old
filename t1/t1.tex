@@ -1,138 +1,32 @@
-\documentclass[12pt]{exam}
-\usepackage[utf8]{inputenc}
-\usepackage[spanish,activeacute]{babel}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb}
-\usepackage{multicol}
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{accents}
 \usepackage{siunitx}
-\usepackage[american]{circuitikz} %Este se usa para hacer circuitos
-\usepackage{float}
-\usetikzlibrary{babel}
-\newcommand{\class}{Técnico en Electricidad Industrial}
-\newcommand{\term}{Electricidad I}
-\newcommand{\examnum}{Examen Parcial II}
-\newcommand{\examdate}{15/10/2019}
-\newcommand{\timelimit}{180 Minutos}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
 
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-\usepackage{graphicx}
-\graphicspath{{../pdf/}{../png/}}
-\DeclareGraphicsExtensions{.pdf,.jpg,.png}
-\usepackage{subfigure}
-\pagestyle{head}
-\firstpageheader{}{}{}
-\runningheader{\examnum}{Pagina \thepage\ de \numpages}{\examdate}
-\runningheadrule
-
-\pointpoints{punto}{puntos}
 \begin{document}
-% Cambio de nombre de cuadro a Tabla
-\renewcommand{\listtablename}{Índice de tablas}
-\renewcommand{\tablename}{Tabla}
 
-\noindent
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r@{\extracolsep{6pt}}}
-\textbf{Nombre:} \makebox[3in]{\hrulefill}&\\	
-& \textbf{\examnum}\\
-\textbf{\class}& \textbf{\examdate}\\
-\textbf{Fundatec}& \textbf{\term} \\
-\textbf{Tecnológico de Costa Rica}& \textbf{Tiempo: \timelimit} \\
-\end{tabular*}\\
-\rule[2ex]{\textwidth}{2pt}
-\textbf{Instrucciones}
-\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
-\item Documente adecuadamente los pasos necesarios para llegar a la respuesta. 
-\item Este examen consta de \numpages\ paginas (incluyendo esta) y \numquestions\ preguntas.
-El numero total de puntos es \numpoints.
+\lhead{Técnico en Electricidad Industrial \\ Fundatec \\ Tecnológico de Costa Rica} 
+\rhead{Corriente Alterna - 2019 \\ Tarea #1  \\ Entrega: 23/11/2019} 
+\cfoot{\thepage\ de \pageref{LastPage}}
+\noindent\textbf{Ejercicio único}. Si se tiene que:  $f=\SI{80}{\hertz}$, $A_p=\SI{130}{\volt}$, $\alpha = \SI{20}{\degree}, $ $B_p=\SI{90}{\volt}$, $\beta = \SI{-40}{\degree}$. Obtenga las gráficas de las siguientes ondas en el rango desde t=\SI{0}{\second} hasta t=\SI{1/40}{\second}  usando Microsoft \textregistered Excel:
+\begin{itemize}
+    \item[] $a = A_p \cdot \sin(\omega t + \alpha )$
+    \item[] $b = B_p \cdot \sin(\omega t + \beta )$
 \end{itemize}
-
-
-
-%\begin{center}
-%Tabla de calificación (No rayar)\\
-%\addpoints
-%\gradetable[v][questions]
-%\end{center}
-
-\noindent
-\rule[2ex]{\textwidth}{2pt}
-
-
-\addpoints
-\begin{questions} 
-
-\question[2] Para el siguiente circuito indique el valor de la resistencia total del circuito entre los puntos \emph{a} y \emph{b}.
-\begin{center}
-	\begin{circuitikz}
-		\draw
-		(0,0) to[R, l=\SI{300}{\ohm}] (0,3)
-		to[short] (2,3)
-		to[R, l=\SI{200}{\ohm}] (2,0)
-		to[short] (0,0)
-		;
-		\draw 
-		(2,3) to[short, -o] (3.5,3) node[right]{a} 
-		;	
-		\draw 
-		(2,0) to[short, -o] (3.5,0) node[right]{b} 
-		;	
-	\end{circuitikz}
-\end{center}	
-
-\addpoints	
-\question[2] Para el siguiente circuito indique el valor de la resistencia total del circuito entre los puntos \emph{a} y \emph{b}.
-\begin{center}
-\begin{circuitikz}
-	\draw
-	(0,0) to[R, l=\SI{235}{\ohm}] (0,3)
-	to[R, l=\SI{115}{\ohm}] (3,3)
-	to[short, -o] (3.5,3) node[right]{a}
-	;
-	\draw 
-	(0,0) to[short, -o] (3.5,0) node[right]{b} 
-	;	
-\end{circuitikz}
-\end{center}
-
-\addpoints
-\question[1] Suponga que usted arma el circuito de la pregunta 2 y coloca el multímetro en la función de medición de resistencia con la punta común (COM) en \emph{a} y la otra punta en \emph{b}. Luego de esto usted obtiene un valor de \SI{341}{\ohm}. Calcule el porcentaje de error de la medición realizada y llene la siguiente tabla.
-\vspace{0.5cm}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-	\hline
-	Teórico & Experimental & \% de Error \\
-	\hline
-	& \SI{341}{\ohm}& \\
-	\hline
-\end{tabular}
-\end{center}
-
-
-%8.86
-\addpoints
-\question[4] Encuentre las corrientes de malla para el siguiente circuito.
-\question[1] Determine el valor de la corriente $I_x$.
-\question[1] Determine el valor del voltaje $V_x$.
-\begin{center}
-	\begin{circuitikz}
-		\draw
-		(0,0) 
-		to[V=\SI{10}{\volt}, invert] (0,4)
-		to[R=\SI{5}{\kilo\ohm}] (4,4)
-		to[R=\SI{3}{\kilo\ohm}, i=$I_x$] (4,0)
-		to[short] (0,0)
-		;
-		\draw 
-		(4,4) 
-		to[R=\SI{4}{\kilo\ohm}] (8,4)
-		to[R=\SI{2}{\kilo\ohm}, v=$V_x$] (8,0)
-		to[V=\SI{5}{\volt}] (4,0)
-		;		
-	\end{circuitikz}
-\end{center}
-
-\end{questions}
-
+\noindent\textbf{Aclaraciones:}
+\begin{itemize}
+    \item Recuerde utilizar una división temporal que permita visualizar la onda correctamente.
+    \item Ambas gráficas deben entregarse en un solo archivo de Excel con la descripción y las unidades adecuadas en los ejes.
+    \item El archivo final debe nombrarse de la siguiente manera:\\ \textbf{PrimerApellido\_PrimerNombre\_Tarea1.xlsx}
+    \item El archivo debe enviarse al correo electrónico \textbf{juan.rojas@ieee.org} el día indicado antes de la media noche
+    \item Cualquier entrega tardía se califica por debajo de 70. 
+\end{itemize}
 \end{document}
