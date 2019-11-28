@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{accents}
+\usepackage{siunitx}
+\usepackage[american]{circuitikz}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
+
+\begin{document}
+
+\lhead{Técnico en Electricidad Industrial \\ Fundatec \\ Tecnológico de Costa Rica} 
+\rhead{Corriente Alterna - 2019 \\ Tarea #2  \\ Entrega: 30/11/2019} 
+\cfoot{\thepage\ de \pageref{LastPage}}
+\noindent\textbf{Ejercicio único}. Para el circuito mostrado, si se tiene que:  $f=\SI{60}{\hertz}$, $L=\SI{2}{\milli\henry}$, $R = \SI{1}{\ohm}, $ $I_T=2\,\angle\,0 \si{\degree}$\,A. Calcule las siguientes incógnitas y de su respuesta con magnitud y ángulo:
+\begin{itemize}
+    \item[] $X_L$, $V_L$ y $V_R$
+\end{itemize}
+Utilizando los datos anteriores, realice las gráficas fasoriales vistas en clase pero a escala, de forma que pueda realizar medidas de longitudes y ángulos para encontrar las siguientes incógnitas:
+\begin{itemize}
+    \item[] $V_T$ y $Z_T$
+\end{itemize}
+
+\begin{center}
+	\begin{circuitikz}
+		\draw
+		(0,0) to[sV, l=$V_T$] (0,3)
+		to[R, l=$R$, i>^=$I_T$] (4,3)
+		to[L, l=$L$] (4,0)
+		to[short] (0,0)
+		;
+	\end{circuitikz}
+\end{center}	
+
+\noindent\textbf{Aclaraciones:}
+\begin{itemize}
+    \item Se deben realizar dos gráficas, una para calcular $V_T$ y la otra para calcular $Z_T$. 
+    \item Cualquier entrega tardía se califica por debajo de 70. 
+\end{itemize}
+\end{document}
