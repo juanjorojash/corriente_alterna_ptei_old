@@ -9,9 +9,9 @@
 \usepackage{float}
 \usetikzlibrary{babel}
 \newcommand{\class}{Técnico en Electricidad Industrial}
-\newcommand{\term}{Electricidad I}
-\newcommand{\examnum}{Examen Parcial II}
-\newcommand{\examdate}{15/10/2019}
+\newcommand{\term}{Corriente Alterna}
+\newcommand{\examnum}{Examen Final}
+\newcommand{\examdate}{14/12/2019}
 \newcommand{\timelimit}{180 Minutos}
 
 
@@ -63,13 +63,13 @@ El numero total de puntos es \numpoints.
 \addpoints
 \begin{questions} 
 
-\question[2] Para el siguiente circuito indique el valor de la resistencia total del circuito entre los puntos \emph{a} y \emph{b}.
+\question[2] Para el siguiente circuito indique el valor de la inductancia total del circuito entre los puntos \emph{a} y \emph{b}.
 \begin{center}
 	\begin{circuitikz}
 		\draw
-		(0,0) to[R, l=\SI{300}{\ohm}] (0,3)
+		(0,0) to[L, l=\SI{10}{\milli\henry}] (0,3)
 		to[short] (2,3)
-		to[R, l=\SI{200}{\ohm}] (2,0)
+		to[L, l=\SI{20}{\milli\henry}] (2,0)
 		to[short] (0,0)
 		;
 		\draw 
@@ -82,12 +82,12 @@ El numero total de puntos es \numpoints.
 \end{center}	
 
 \addpoints	
-\question[2] Para el siguiente circuito indique el valor de la resistencia total del circuito entre los puntos \emph{a} y \emph{b}.
+\question[2] Para el siguiente circuito indique el valor de la capacitancia total del circuito entre los puntos \emph{a} y \emph{b}.
 \begin{center}
 \begin{circuitikz}
 	\draw
-	(0,0) to[R, l=\SI{235}{\ohm}] (0,3)
-	to[R, l=\SI{115}{\ohm}] (3,3)
+	(0,0) to[C, l=\SI{50}{\micro\farad}] (0,3)
+	to[C, l=\SI{100}{\micro\farad}] (3,3)
 	to[short, -o] (3.5,3) node[right]{a}
 	;
 	\draw 
@@ -97,14 +97,14 @@ El numero total de puntos es \numpoints.
 \end{center}
 
 \addpoints
-\question[1] Suponga que usted arma el circuito de la pregunta 2 y coloca el multímetro en la función de medición de resistencia con la punta común (COM) en \emph{a} y la otra punta en \emph{b}. Luego de esto usted obtiene un valor de \SI{341}{\ohm}. Calcule el porcentaje de error de la medición realizada y llene la siguiente tabla.
+\question[1] Suponga que usted arma el circuito de la pregunta 2 y coloca el multímetro en la función de medición de capacitancia con la punta común (COM) en \emph{b} y la otra punta en \emph{a}. Luego de esto usted obtiene un valor de \SI{153}{\micro\farad}. Calcule el porcentaje de error de la medición realizada y llene la siguiente tabla.
 \vspace{0.5cm}
 \begin{center}
 \begin{tabular}{|c|c|c|}
 	\hline
 	Teórico & Experimental & \% de Error \\
 	\hline
-	& \SI{341}{\ohm}& \\
+	& \SI{153}{\micro\farad}& \\
 	\hline
 \end{tabular}
 \end{center}
@@ -112,26 +112,26 @@ El numero total de puntos es \numpoints.
 
 %8.86
 \addpoints
-\question[4] Encuentre las corrientes de malla para el siguiente circuito.
-\question[1] Determine el valor de la corriente $I_x$.
-\question[1] Determine el valor del voltaje $V_x$.
+\question[5] Para el circuito mostrado abajo, si se tiene que:  $f=\SI{60}{\hertz}$, $R = \SI{1}{\ohm}$, $L=\SI{2}{\milli\henry}$, $C = \SI{5}{\milli\farad}$, $I_T=2\,\angle\,0 \si{\degree}$\,A. Calcule las siguientes incógnitas y de su respuesta con magnitud y ángulo:
+\begin{itemize}
+    \item[] $X_L$, $X_C$, $V_R$, $V_L$ y $V_C$
+\end{itemize}
+\question[6] Utilizando los datos anteriores, realice las gráficas fasoriales vistas en clase y encuentre las siguientes incógnitas:
+\begin{itemize}
+    \item[] $V_T$, $Z_T$, P, Q, S y fp
+\end{itemize}
+\question[2] Indique que valor debe tener un capacitor (colocado en paralelo con $V_T$)  para lograr un factor de potencia unitario (fp = 1)
+
 \begin{center}
 	\begin{circuitikz}
 		\draw
-		(0,0) 
-		to[V=\SI{10}{\volt}, invert] (0,4)
-		to[R=\SI{5}{\kilo\ohm}] (4,4)
-		to[R=\SI{3}{\kilo\ohm}, i=$I_x$] (4,0)
-		to[short] (0,0)
+		(0,0) to[sV, l=$V_T$] (0,3)
+		to[R, l=$R$, i>^=$I_T$] (4,3)
+		to[L, l=$L$] (4,0)
+		to[C, l=$C$] (0,0)
 		;
-		\draw 
-		(4,4) 
-		to[R=\SI{4}{\kilo\ohm}] (8,4)
-		to[R=\SI{2}{\kilo\ohm}, v=$V_x$] (8,0)
-		to[V=\SI{5}{\volt}] (4,0)
-		;		
 	\end{circuitikz}
-\end{center}
+\end{center}	
 
 \end{questions}
 

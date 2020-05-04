@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage[american]{circuitikz} %Este se usa para hacer circuitos
+\usepackage{float}
+\usepackage{hyperref}
+\usetikzlibrary{babel}
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\usepackage{graphicx}
+\graphicspath{{../pdf/}{../png/}}
+\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\usepackage{subfigure}
+
+
+
+% Cambio de nombre de cuadro a Tabla
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+
+\begin{document}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r@{\extracolsep{6pt}}}
+\TextField[width=7cm]{\textbf{Nombre:}} &\\	
+& \textbf{Informe de Laboratorio}\\
+\textbf{Técnico en Electricidad Industrial}& \textbf{Corriente Alterna}\\
+\textbf{Fundatec}& \textbf{Realizado: 07/12/2019} \\
+\textbf{Tecnológico de Costa Rica}& \textbf{Entrega: 16/12/2019} \\
+\end{tabular*}\\
+
+\noindent\rule[2ex]{\textwidth}{2pt}
+\noindent\textbf{Instrucciones}
+\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
+\item Rellene los espacios indicados de acuerdo a los datos obtenidos durante la experiencia de laboratorio. 
+\item Luego de rellenar los campos, el archivo debe nombrarse de la siguiente manera:\\ \textbf{PrimerApellido\_PrimerNombre\_Informe.pdf}
+\item El archivo debe enviarse al correo electrónico \textbf{juan.rojas@ieee.org} el día indicado antes de la media noche
+\item Cualquier entrega tardía se califica por debajo de 70. 
+\end{itemize}
+
+\noindent\rule[2ex]{\textwidth}{2pt}
+{\large \textbf{Circuito RC}} \\
+
+\noindent\textbf{Procedimiento}
+\begin{enumerate}\itemsep1pt \parskip0pt \parsep0pt
+\item Arme el circuito de la Figura \ref{fig:F1} y conecte el osciloscopio digital tal y como se muestra. 
+\item Obtenga una onda senoidal usando el generador de señales. 
+\item Utilice los cursores del osciloscopio para encontrar el desfase entre $V_R$ y $V_C$.
+\end{enumerate}
+
+\end{document}
